@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TierraViva — Cuidado Humano y Consciente del Medio Ambiente</title>
+  
+  <!-- Fuentes Google: Playfair Display (editorial) y Plus Jakarta Sans (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+      </svg>
+      TierraViva
+    </div>
+    <ul class="nav-links">
+      <li><a href="#manifiesto">Manifiesto</a></li>
+      <li><a href="#pilares">Pilares</a></li>
+      <li><a href="#compromisos">Mi Compromiso</a></li>
+      <li><a href="#impacto">Impacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Manifiesto por el Plantea</div>
+      <h1 class="hero-title">Recuperar el equilibrio no es un lujo, es nuestra única vía.</h1>
+      <p class="hero-desc">El cuidado de la Tierra no empieza con discursos abstractos ni tecnologías complejas. Comienza reevaluando el ritmo de nuestro consumo diario y el valor que le damos a lo natural.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sección Manifiesto -->
+    <section id="manifiesto" class="manifesto-section">
+      <div class="manifesto-quote">
+        "No heredamos la Tierra de nuestros antepasados, la tomamos prestada de nuestros hijos."
+      </div>
+      <p class="manifesto-text">
+        El planeta no necesita soluciones perfectas de una sola persona, sino millones de pequeñas decisiones conscientes tomadas cada día por personas comunes. Cuidar el medio ambiente es reanudar el respeto por el agua que bebemos, el aire que respiramos y el suelo que pisamos.
+      </p>
+    </section>
+
+    <!-- Sección Pilares -->
+    <section id="pilares" class="section-container">
+      <h2 class="section-title">Los 4 Pilares del Cambio</h2>
+      <div class="grid-pilares">
+        
+        <article class="card pilar-1">
+          <div class="card-icon">💧</div>
+          <h3 class="card-title">Cuidado del Agua</h3>
+          <p class="card-body">Menos del 1% del agua dulce del planeta es de fácil acceso. Evita el desperdicio en tareas cotidianas, repara fugas domésticas y evita el uso indiscriminado de plásticos de un solo uso que terminan en los ríos y océanos.</p>
+        </article>
+
+        <article class="card pilar-2">
+          <div class="card-icon">🌱</div>
+          <h3 class="card-title">Consumo Consciente</h3>
+          <p class="card-body">Comprar local reduce la huella de carbono del transporte comercial. Prioriza productos duraderos sobre los desechables y exige transparencia en la producción de los bienes que consumes.</p>
+        </article>
+
+        <article class="card pilar-3">
+          <div class="card-icon">♻️</div>
+          <h3 class="card-title">Cierre de Ciclos</h3>
+          <p class="card-body">El concepto de "basura" es un invento humano; en la naturaleza todo se transforma. Separa tus residuos organicidad para compost, reutiliza envases y recicla papel, vidrio y metales.</p>
+        </article>
+
+        <article class="card pilar-4">
+          <div class="card-icon">🐝</div>
+          <h3 class="card-title">Biodiversidad Urbana</h3>
+          <p class="card-body">Incluso una ventana o un pequeño balcón pueden albergar plantas nativas que alimenten polinizadores como abejas y mariposas. La restauración vegetal empieza en cada hogar.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Sección Interactiva: Mi Compromiso -->
+    <section id="compromisos" class="section-container">
+      <h2 class="section-title">Pequeñas Acciones, Gran Impacto</h2>
+      <p style="margin-bottom: 24px; color: var(--text-muted);">Selecciona las acciones que estés dispuesto a integrar en tu rutina hoy:</p>
+
+      <div class="interactive-box">
+        <div class="filter-bar">
+          <button class="filter-btn active" onclick="filterActions('all', this)">Todas</button>
+          <button class="filter-btn" onclick="filterActions('hogar', this)">En el Hogar</button>
+          <button class="filter-btn" onclick="filterActions('consumo', this)">Consumo</button>
+          <button class="filter-btn" onclick="filterActions('movilidad', this)">Movilidad</button>
+        </div>
+
+        <ul class="action-list" id="actionList">
+          <li class="action-item" data-category="hogar">
+            <input type="checkbox" id="act1" onchange="updateCounter()">
+            <label for="act1">Cerrar el grifo mientras me lavo los dientes o me enjabono las manos.</label>
+          </li>
+          <li class="action-item" data-category="consumo">
+            <input type="checkbox" id="act2" onchange="updateCounter()">
+            <label for="act2">Llevar bolsas de tela o reutilizables al hacer las compras.</label>
+          </li>
+          <li class="action-item" data-category="movilidad">
+            <input type="checkbox" id="act3" onchange="updateCounter()">
+            <label for="act3">Caminar o usar bicicleta para trayectos menores a 2 kilómetros.</label>
+          </li>
+          <li class="action-item" data-category="hogar">
+            <input type="checkbox" id="act4" onchange="updateCounter()">
+            <label for="act4">Desconectar cargadores y electrodomésticos en modo de espera.</label>
+          </li>
+          <li class="action-item" data-category="consumo">
+            <input type="checkbox" id="act5" onchange="updateCounter()">
+            <label for="act5">Evitar la compra de botellas de agua de plástico de un solo uso.</label>
+          </li>
+          <li class="action-item" data-category="hogar">
+            <input type="checkbox" id="act6" onchange="updateCounter()">
+            <label for="act6">Separar los residuos orgánicos de los inorgánicos en casa.</label>
+          </li>
+        </ul>
+
+        <div class="counter-box">
+          He sumado <span id="counter">0</span> compromisos hoy 🌱
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Impacto / Datos -->
+    <section id="impacto" class="impact-section">
+      <h2 class="section-title" style="color: var(--color-bg);">Cifras para reflexionar</h2>
+      
+      <div class="grid-impact">
+        <div class="impact-card">
+          <div class="impact-num">8M</div>
+          <div class="impact-label">Toneladas de plástico llegan al océano cada año.</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-num">1/3</div>
+          <div class="impact-label">De los alimentos producidos a nivel mundial se desperdicia.</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-num">15B</div>
+          <div class="impact-label">De árboles son talados anualmente alrededor del mundo.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>TierraViva &copy; 2026 — Diseñado con conciencia ecológica y respeto por la naturaleza.</p>
+  </footer>
+
+  <script>
+    function updateCounter() {
+      const checkboxes = document.querySelectorAll('#actionList input[type="checkbox"]');
+      let count = 0;
+      checkboxes.forEach(cb => {
+        if (cb.checked) count++;
+      });
+      document.getElementById('counter').innerText = count;
+    }
+
+    function filterActions(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const items = document.querySelectorAll('.action-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
